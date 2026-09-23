@@ -1,18 +1,51 @@
-/* Quando o input está marcado, altera as variáveis do Bootstrap no container do site */
-#alternador-modo:checked ~ .site-wrapper {
-    --bs-body-bg: #212529;         /* Cor de fundo dark padrão do Bootstrap */
-    --bs-body-color: #f8f9fa;      /* Cor de texto light padrão do Bootstrap */
-    --bs-border-color: #495057;    /* Cor das bordas no modo dark */
+/* Zera as margens do navegador para a cor cobrir tudo */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Transição suave para as cores mudarem de forma elegante */
+/* 1. CONFIGURAÇÃO PADRÃO (Modo Claro - Tela Cheia) */
 .site-wrapper {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
+    min-height: 100vh;
+    width: 100%;
+    
+    /* Cores do Modo Claro */
+    --bg-atual: #ffffff;
+    --texto-atual: #212529;
+    --borda-atual: #dee2e6;
+    --muted-atual: #6c757d;
+    background-color: var(--bg-atual) !important;
+    color: var(--texto-atual) !important;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Altera dinamicamente o texto dentro do botão usando CSS */
+/* 2. QUANDO O CHECKBOX ESTIVER SELECIONADO (Modo Escuro - Tela Cheia) */
+#alternador-modo:checked ~ .site-wrapper {
+    /* Cores do Modo Escuro */
+    --bg-atual: #121212;
+    --texto-atual: #f8f9fa;
+    --borda-atual: #343a40;
+    --muted-atual: #adb5bd;
+}
+
+/* 3. APLICANDO AS CORES NOS COMPONENTES INTERNOS */
+.bg-body-style {
+    background-color: var(--bg-atual) !important;
+}
+.text-muted-style {
+    color: var(--muted-atual) !important;
+}
+.border {
+    border-color: var(--borda-atual) !important;
+}
+
+/* 4. DINÂMICA DE TEXTO DO BOTÃO (Correção de clique duplo) */
+label[for="alternador-modo"] {
+    cursor: pointer; /* Garante o ícone de "mãozinha" em todo o botão */
+}
+
 #alternador-modo:checked ~ .site-wrapper .texto-modo-escuro {
     display: none !important;
 }
