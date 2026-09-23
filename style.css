@@ -1,0 +1,22 @@
+/* Quando o input está marcado, altera as variáveis do Bootstrap no container do site */
+#alternador-modo:checked ~ .site-wrapper {
+    --bs-body-bg: #212529;         /* Cor de fundo dark padrão do Bootstrap */
+    --bs-body-color: #f8f9fa;      /* Cor de texto light padrão do Bootstrap */
+    --bs-border-color: #495057;    /* Cor das bordas no modo dark */
+}
+
+/* Transição suave para as cores mudarem de forma elegante */
+.site-wrapper {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Altera dinamicamente o texto dentro do botão usando CSS */
+#alternador-modo:checked ~ .site-wrapper .texto-modo-escuro {
+    display: none !important;
+}
+
+#alternador-modo:checked ~ .site-wrapper .texto-modo-claro {
+    display: inline-block !important;
+}
