@@ -1,4 +1,4 @@
-/* Configuração Base da Tela */
+/* ==================== RESET ==================== */
 html, body {
     margin: 0;
     padding: 0;
@@ -7,8 +7,11 @@ html, body {
     scroll-behavior: smooth; /* Deixa o deslizar do carrossel suave */
 }
 
-/* 1. CONFIGURAÇÃO DE CORES (Padrão Light) */
+/* ==================== MODO CLARO (default) ==================== */
 .site-wrapper {
+    min-height: 100vh;
+    width: 100%;
+/* CORES DO MODO CLARO */
     --bg-atual: #ffffff;
     --texto-atual: #212529;
     --borda-atual: #dee2e6;
@@ -20,46 +23,57 @@ html, body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 2. ALTERAÇÃO PARA MODO ESCURO (Quando o Checkbox estiver :checked) */
-#alternador-modo:checked ~ .site-wrapper {
+/* ==================== MODO ESCURO ==================== */
+#alternador-modo:checked~.site-wrapper {
+/* CORES DO MODO ESCURO */
     --bg-atual: #121212;
     --texto-atual: #f8f9fa;
-    --borda-atual: #2d3238;
+    --borda-atual: #343a40;
     --muted-atual: #adb5bd;
     --card-bg: #1e1e1e;
 }
 
-/* 3. MAPEAMENTO DE ESTILOS NOS COMPONENTES DO BOOTSTRAP */
+/* ==================== COMPONENTES ==================== */
 .bg-body-style, .navbar, .footer {
     background-color: var(--bg-atual) !important;
 }
+
 .text-atual, .nav-link {
     color: var(--texto-atual) !important;
 }
+
 .text-muted-style {
     color: var(--muted-atual) !important;
 }
+
 .border, .border-bottom, .border-top {
     border-color: var(--borda-atual) !important;
 }
+
 .card-style {
     background-color: var(--card-bg) !important;
 }
 
-/* 4. DINÂMICA VISUAL DO SEU BOTÃO EM_LABEL (Alterna os Emojis) */
-#alternador-modo:checked ~ label[for="alternador-modo"] .texto-modo-escuro {
-    display: none !important;
+label[for="alternador-modo"] {
+    cursor: pointer; /* Garante o ícone de "mãozinha" em todo o botão */
 }
 
-#alternador-modo:checked ~ label[for="alternador-modo"] .texto-modo-claro {
-    display: inline-block !important;
+/* Alternador de modo (ícones sol/lua) */
+
+#alternador-modo:checked ~ .site-wrapper label[for="alternador-modo"] .texto-modo-escuro {
+  display: none !important;
+}
+#alternador-modo:checked ~ .site-wrapper label[for="alternador-modo"] .texto-modo-claro {
+  display: inline-block !important;
 }
 
-/* 5. ARQUITETURA DO CARROSSEL DE IMAGENS (CSS PURO) */
-.carrossel-container {
-    height: 400px;
+
+/* ==================== CARROSSEL ==================== */
+.carroussel-container {
+    height: 100%;
     width: 100%;
 }
+
 .carrossel-slides {
     width: 100%;
     height: 100%;
@@ -67,13 +81,45 @@ html, body {
     scroll-snap-type: x mandatory; /* Força os slides a se prenderem nas bordas */
     scrollbar-width: none; /* Oculta barra de rolagem no Firefox */
 }
+
 .carrossel-slides::-webkit-scrollbar {
     display: none; /* Oculta barra de rolagem no Chrome/Safari/Edge */
 }
+
 .slide-item {
     min-width: 100%;
     height: 100%;
-    scroll-snap-align: start;
+    scroll-snap-align: start;    
+}
+.carousel-item img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço do carrossel sem distorção */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px;
+    }
+}
+
+/* ==================== NAVBAR MOBILE ==================== */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        display: none !important;
+        width: 100%;
+    }
+
+    #menu-toggle:checked~.navbar-collapse {
+        display: block !important;
+    }
+
+    .navbar-collapse .d-flex {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+    }
 }
 
 /* ==================== MENU HAMBÚRGUER COM CSS PURO ==================== */
@@ -97,4 +143,12 @@ html, body {
         text-align: center;
         padding-bottom: 10px;
     }
+   
+}
+
+
+/* ==================== COMENTÁRIOS ==================== */
+.list-group-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--borda-atual);
 }

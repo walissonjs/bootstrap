@@ -1,124 +1,152 @@
 <!DOCTYPE html>
-<html lang="Pt-Br" data-bs-theme="dark">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Class</title>
+    <title>Wicakes Pizzaria</title>
     <link rel="shortcut icon" href="assets/img/favicon-logo.png" type="image/x-icon">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Seu CSS Personalizado -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Input totalmente isolado e invisível -->
+    <!-- Alternador Dark/Light -->
     <input type="checkbox" id="alternador-modo" class="d-none">
-
-    <!-- Container que cobre 100% da página real -->
-    <div class="site-wrapper d-flex flex-column justify-content-center align-items-center">
-
-        <!-- Botão expandido: A label inteira agora reage ao clique perfeitamente -->
-        <label for="alternador-modo" class="btn btn-outline-secondary position-fixed top-0 end-0 m-3 py-1 px-1 d-inline-block user-select-none z-3">
-            <span class="texto-modo-escuro">🌙</span>
-            <span class="texto-modo-claro d-none">☀️</span>
-        </label>
-    </div>
-
-
-        <!-- ==================== CABEÇALHO (NAVBAR) RESPONSIVO ==================== -->
-        <!-- ==================== CABEÇALHO (NAVBAR) RESPONSIVO ==================== -->
-<nav class="navbar navbar-expand-lg border-bottom px-4 py-3 bg-body-style shadow-sm position-relative">
-    <div class="container-fluid">
-        <!-- Nome da Empresa -->
-        <a class="navbar-brand fw-bold fs-3 text-danger" href="#">WiCakes</a>
+    
+    
+    <div class="site-wrapper d-flex flex-column min-vh-100">
         
-        <!-- Input Invisível para controlar a abertura do Menu Hambúrguer -->
-        <input type="checkbox" id="menu-toggle" class="d-none">
-
-        <!-- Botão Hambúrguer Visível apenas no Telemóvel -->
-        <label for="menu-toggle" class="navbar-toggler d-lg-none" type="button" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </label>
-
-        <!-- Bloco de Links de Navegação -->
-        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarLinks">
-            <div class="d-flex flex-column flex-lg-row gap-3 mt-3 mt-lg-0 pe-lg-5">
-                <a class="nav-link fw-semibold text-atual" href="#">Início</a>
-                <a class="nav-link fw-semibold text-atual" href="#">Produtos</a>
-                <a class="nav-link fw-semibold text-atual" href="#">Quem Somos</a>
-                <a class="nav-link fw-semibold text-atual" href="#">Fale Conosco</a>
-            </div>
-        </div>
-    </div>
-</nav>
-
-
-
-        <!-- ==================== CARROSSEL DE OFERTAS (CSS PURO) ==================== -->
-        <div class="container my-5 flex-grow-1">
-            <h2 class="text-center fw-bold mb-4">🍕 Ofertas da Semana</h2>
+        <!-- Botão alternador -->
+            <label for="alternador-modo" class="btn btn-outline-secondary position-fixed top-0 end-0 m-3 py-1 px-2 z-3">
+                <span class="texto-modo-escuro">🌙</span>
+                <span class="texto-modo-claro d-none">☀️</span>
+            </label>
             
-            <div class="carrossel-container border rounded overflow-hidden shadow position-relative">
-                <!-- Slides de Imagens (Imagens reais de alta resolução para fins de teste visual) -->
-                <div class="carrossel-slides d-flex" id="slider">
-                    <div class="slide-item position-relative text-center" id="slide1">
-                        <img src="assets/img/PIZ01.jpg" class="w-100 h-100 object-fit-cover" alt="Oferta 1">
-                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Segunda em Dobro!</h5></div>
-                    </div>
-                    <div class="slide-item position-relative text-center" id="slide2">
-                        <img src="assets/img/PIZ02.avif" class="w-100 h-100 object-fit-cover" alt="Oferta 2">
-                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Combo Pizza + Refri</h5></div>
-                    </div>
-                    <div class="slide-item position-relative text-center" id="slide3">
-                        <img src="assets/img/PIZ03.jpg" class="w-100 h-100 object-fit-cover" alt="Oferta 3">
-                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Borda Recheada Grátis</h5></div>
-                    </div>
-                    <div class="slide-item position-relative text-center" id="slide4">
-                        <img src="assets/img/PIZ04.jpg" class="w-100 h-100 object-fit-cover" alt="Oferta 4">
-                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Pizza Doce com Desconto</h5></div>
-                    </div>
-                    <div class="slide-item position-relative text-center" id="slide5">
-                        <img src="assets/img/PIZ05.jpg" class="w-100 h-100 object-fit-cover" alt="Oferta 5">
-                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Frete Grátis no App</h5></div>
-                    </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg shadow-sm bg-body-style">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3 text-danger" href="#">Wicakes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
+                    <ul class="navbar-nav gap-3">
+                        <li class="nav-item"><a class="nav-link text-atual fw-semibold" href="#">Início</a></li>
+                        <li class="nav-item"><a class="nav-link text-atual fw-semibold" href="#">Produtos</a></li>
+                        <li class="nav-item"><a class="nav-link text-atual fw-semibold" href="#">Quem Somos</a></li>
+                        <li class="nav-item"><a class="nav-link text-atual fw-semibold" href="#">Fale Conosco</a></li>
+                    </ul>
                 </div>
+            </div>
+        </nav>
 
-                <!-- Controles de Navegação do Carrossel (Navegação interna via IDs) -->
-                <div class="carrossel-controles position-absolute bottom-0 start-50 translate-middle-x mb-2 d-flex gap-2 z-1">
-                    <a href="#slide1" class="btn btn-sm btn-light border shadow-sm">1</a>
-                    <a href="#slide2" class="btn btn-sm btn-light border shadow-sm">2</a>
-                    <a href="#slide3" class="btn btn-sm btn-light border shadow-sm">3</a>
-                    <a href="#slide4" class="btn btn-sm btn-light border shadow-sm">4</a>
-                    <a href="#slide5" class="btn btn-sm btn-light border shadow-sm">5</a>
+        <!-- Carrossel -->
+        <div id="carouselpiz" class="carousel slide carousel-fade mt-2" data-bs-ride="carousel" data-bs-interval="2000"
+            data-bs-wrap="true">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/PIZ01.jpg" class="d-block w-100 img-fluid" alt="Oferta 1"
+                        style="height:35rem;object-fit:cover;">
+                    <div class="carousel-caption bg-light bg-opacity-40 rounded p-2" style="color: black;">
+                        <h5>Segunda em Dobro!</h5>
+                    </div>
                 </div>
+                <div class="carousel-item">
+                    <img src="assets/img/PIZ02.avif" class="d-block w-100 img-fluid" alt="Oferta 2"
+                        style="height:35rem;object-fit:cover;">
+                    <div class="carousel-caption bg-light bg-opacity-40 rounded p-2" style="color: black;">
+                        <h5>Combo Pizza + Refri</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/PIZ03.jpg" class="d-block w-100 img-fluid" alt="Oferta 3"
+                        style="height:35rem;object-fit:cover;">
+                    <div class="carousel-caption bg-light bg-opacity-40 rounded p-2" style="color: black;">
+                        <h5>A melhor da cidade</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/PIZ04.jpg" class="d-block w-100 img-fluid" alt="Oferta 4"
+                        style="height:35rem;object-fit:cover;">
+                    <div class="carousel-caption bg-light bg-opacity-40 rounded p-2" style="color: black;">
+                        <h5>Pizzas a partir de R$ 22</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/PIZ05.jpg" class="d-block w-100 img-fluid" alt="Oferta 5"
+                        style="height:35rem;object-fit:cover;">
+                    <div class="carousel-caption bg-light bg-opacity-40 rounded p-2" style="color: black;">
+                        <h5>Frete grátis no App</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões de navegação -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselpiz" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselpiz" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselpiz" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselpiz" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselpiz" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#carouselpiz" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#carouselpiz" data-bs-slide-to="4"></button>
             </div>
         </div>
 
-        <!-- ==================== SEÇÃO INSTAGRAM ==================== -->
-        <div class="container text-center mb-5 p-4 border rounded card-style shadow-sm">
+        <!-- Instagram -->
+        <section class="container text-center my-5 p-4 border rounded card-style shadow-sm">
             <h3 class="fw-bold mb-2">Acompanhe nossas Delícias! 📸</h3>
             <p class="text-muted-style">Fique por dentro dos bastidores e novos sabores no nosso feed.</p>
-            <!-- Link Direcionado para o Instagram solicitado -->
-            <a href="https://instagram.com" target="_blank" class="btn btn-danger btn-lg px-4 fw-bold">
+            <a href="https://instagram.com/wicakesdelicias" target="_blank" class="btn btn-danger btn-lg px-4 fw-bold">
                 Seguir @wicakesdelicias
             </a>
-        </div>
+        </section>
 
-        <!-- ==================== RODAPÉ (FOOTER) ==================== -->
-        <footer class="footer border-top py-4 px-4 bg-body-style mt-auto">
-            <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-                <!-- Copyright e Direitos Reservados -->
-                <div class="text-muted-style text-center text-md-start">
-                    &copy; 2026 <strong>WiCakes Pizzaria</strong>. Todos os direitos reservados.
+        <!-- Comentários -->
+        <section class="container my-5">
+            <h3 class="fw-bold mb-3">Comentários dos Clientes 💬</h3>
+            <div class="list-group shadow-sm mb-4">
+                <div class="list-group-item"><strong>Maria:</strong> Pizza deliciosa e atendimento excelente!</div>
+                <div class="list-group-item"><strong>João:</strong> A borda recheada é sensacional, virei cliente fiel.
                 </div>
-                
-                <!-- Botão de Atendimento via WhatsApp -->
-                <a href="https://wa.me" target="_blank" class="btn btn-success fw-bold d-flex align-items-center gap-2 shadow px-4 py-2">
+                <div class="list-group-item"><strong>Ana:</strong> Entrega rápida e quentinha, recomendo demais.</div>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Seu nome</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                </div>
+                <div class="mb-3">
+                    <label for="comentario" class="form-label">Comentário</label>
+                    <textarea class="form-control" id="comentario" rows="3"
+                        placeholder="Deixe seu comentário"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Enviar Comentário</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer border-top py-4 px-4 bg-body-style mt-auto">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-muted-style text-center text-md-start">
+                    &copy; 2026 <strong>Wicakes Pizzaria</strong>. Todos os direitos reservados.
+                </div>
+                <a href="https://wa.me/5585992348584" target="_blank"
+                    class="btn btn-success fw-bold d-flex align-items-center gap-2 shadow px-4 py-2">
                     💬 Falar no WhatsApp
                 </a>
             </div>
         </footer>
-
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
