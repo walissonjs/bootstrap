@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- Input totalmente isolado e invisível -->
     <input type="checkbox" id="alternador-modo" class="d-none">
 
@@ -22,8 +21,102 @@
             <span class="texto-modo-escuro">🌙</span>
             <span class="texto-modo-claro d-none">☀️</span>
         </label>
+    </div>
 
+
+        <!-- ==================== CABEÇALHO (NAVBAR) RESPONSIVO ==================== -->
+        <!-- ==================== CABEÇALHO (NAVBAR) RESPONSIVO ==================== -->
+<nav class="navbar navbar-expand-lg border-bottom px-4 py-3 bg-body-style shadow-sm position-relative">
+    <div class="container-fluid">
+        <!-- Nome da Empresa -->
+        <a class="navbar-brand fw-bold fs-3 text-danger" href="#">WiCakes</a>
+        
+        <!-- Input Invisível para controlar a abertura do Menu Hambúrguer -->
+        <input type="checkbox" id="menu-toggle" class="d-none">
+
+        <!-- Botão Hambúrguer Visível apenas no Telemóvel -->
+        <label for="menu-toggle" class="navbar-toggler d-lg-none" type="button" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </label>
+
+        <!-- Bloco de Links de Navegação -->
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarLinks">
+            <div class="d-flex flex-column flex-lg-row gap-3 mt-3 mt-lg-0 pe-lg-5">
+                <a class="nav-link fw-semibold text-atual" href="#">Início</a>
+                <a class="nav-link fw-semibold text-atual" href="#">Produtos</a>
+                <a class="nav-link fw-semibold text-atual" href="#">Quem Somos</a>
+                <a class="nav-link fw-semibold text-atual" href="#">Fale Conosco</a>
+            </div>
         </div>
+    </div>
+</nav>
+
+
+
+        <!-- ==================== CARROSSEL DE OFERTAS (CSS PURO) ==================== -->
+        <div class="container my-5 flex-grow-1">
+            <h2 class="text-center fw-bold mb-4">🍕 Ofertas da Semana</h2>
+            
+            <div class="carrossel-container border rounded overflow-hidden shadow position-relative">
+                <!-- Slides de Imagens (Imagens reais de alta resolução para fins de teste visual) -->
+                <div class="carrossel-slides d-flex" id="slider">
+                    <div class="slide-item position-relative text-center" id="slide1">
+                        <img src="assets/img/PIZ01.jpg" class="w-100 h-100 object-fit-cover" alt="Oferta 1">
+                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Segunda em Dobro!</h5></div>
+                    </div>
+                    <div class="slide-item position-relative text-center" id="slide2">
+                        <img src="assets/img/PIZ02.avif" class="w-100 h-100 object-fit-cover" alt="Oferta 2">
+                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Combo Pizza + Refri</h5></div>
+                    </div>
+                    <div class="slide-item position-relative text-center" id="slide3">
+                        <img src="assets/img/PIZ03.jpg" class="w-100 h-100 object-fit-cover" alt="Oferta 3">
+                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Borda Recheada Grátis</h5></div>
+                    </div>
+                    <div class="slide-item position-relative text-center" id="slide4">
+                        <img src="assets/img/PIZ04.jpg" class="w-100 h-100 object-fit-cover" alt="Oferta 4">
+                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Pizza Doce com Desconto</h5></div>
+                    </div>
+                    <div class="slide-item position-relative text-center" id="slide5">
+                        <img src="assets/img/PIZ05.jpg" class="w-100 h-100 object-fit-cover" alt="Oferta 5">
+                        <div class="carousel-caption d-block bg-dark bg-opacity-50 rounded p-2 m-3"><h5>Frete Grátis no App</h5></div>
+                    </div>
+                </div>
+
+                <!-- Controles de Navegação do Carrossel (Navegação interna via IDs) -->
+                <div class="carrossel-controles position-absolute bottom-0 start-50 translate-middle-x mb-2 d-flex gap-2 z-1">
+                    <a href="#slide1" class="btn btn-sm btn-light border shadow-sm">1</a>
+                    <a href="#slide2" class="btn btn-sm btn-light border shadow-sm">2</a>
+                    <a href="#slide3" class="btn btn-sm btn-light border shadow-sm">3</a>
+                    <a href="#slide4" class="btn btn-sm btn-light border shadow-sm">4</a>
+                    <a href="#slide5" class="btn btn-sm btn-light border shadow-sm">5</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SEÇÃO INSTAGRAM ==================== -->
+        <div class="container text-center mb-5 p-4 border rounded card-style shadow-sm">
+            <h3 class="fw-bold mb-2">Acompanhe nossas Delícias! 📸</h3>
+            <p class="text-muted-style">Fique por dentro dos bastidores e novos sabores no nosso feed.</p>
+            <!-- Link Direcionado para o Instagram solicitado -->
+            <a href="https://instagram.com" target="_blank" class="btn btn-danger btn-lg px-4 fw-bold">
+                Seguir @wicakesdelicias
+            </a>
+        </div>
+
+        <!-- ==================== RODAPÉ (FOOTER) ==================== -->
+        <footer class="footer border-top py-4 px-4 bg-body-style mt-auto">
+            <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <!-- Copyright e Direitos Reservados -->
+                <div class="text-muted-style text-center text-md-start">
+                    &copy; 2026 <strong>WiCakes Pizzaria</strong>. Todos os direitos reservados.
+                </div>
+                
+                <!-- Botão de Atendimento via WhatsApp -->
+                <a href="https://wa.me" target="_blank" class="btn btn-success fw-bold d-flex align-items-center gap-2 shadow px-4 py-2">
+                    💬 Falar no WhatsApp
+                </a>
+            </div>
+        </footer>
 
     </div>
 
